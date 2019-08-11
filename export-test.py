@@ -1,7 +1,7 @@
 from fastai.vision import load_learner, open_image
 from PIL import Image
 
-learn = load_learner('./')
+learn = load_learner('./webapp/')
 
 image_names = ['villager-test.png', 'gold-test.png', 'champion-test.png']
 

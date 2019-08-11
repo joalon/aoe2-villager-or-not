@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Villager or not</title>
+{% block body %}{% endblock %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div align="center"v>
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}

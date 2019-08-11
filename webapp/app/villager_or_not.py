@@ -1,14 +1,16 @@
+#!/usr/bin/env python
+
 from flask import Flask, request, redirect, flash, render_template
-from werkzeug.utils import secure_filename
 from fastai.vision import load_learner, open_image
+from secrets import token_urlsafe
 
 app = Flask(__name__)
-app.secret_key = b'ig%FzpnSjqEpMrAM!YLw&avH5'
+app.secret_key = token_urlsafe(16)
 learn = load_learner('./')
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
-@app.route('/a', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         if 'file' not in request.files:
