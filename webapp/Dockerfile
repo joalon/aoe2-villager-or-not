@@ -14,7 +14,7 @@ COPY uwsgi.ini /etc/uwsgi/
 COPY nginx.conf /etc/nginx/
 COPY villager-or-not.conf /etc/nginx/conf.d/
 
-COPY ../requirements.txt .
+COPY ./requirements.txt .
 COPY ./export.pkl .
 COPY ./templates ./app/templates
 
